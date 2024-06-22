@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Turnover Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+        }
+        input {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #5cb85c;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Employee Turnover Prediction</h2>
+        <form action="/predict" method="POST">
+            <label for="satisfactoryLevel">Satisfactory Level</label>
+            <input type="number" step="0.01" name="satisfactoryLevel" required>
+            
+            <label for="lastEvaluation">Last Evaluation</label>
+            <input type="number" step="0.01" name="lastEvaluation" required>
+            
+            <label for="numberOfProjects">Number of Projects</label>
+            <input type="number" name="numberOfProjects" required>
+            
+            <label for="avgMonthlyHours">Average Monthly Hours</label>
+            <input type="number" name="avgMonthlyHours" required>
+            
+            <label for="timeSpentCompany">Time Spent at Company (Years)</label>
+            <input type="number" name="timeSpentCompany" required>
+            
+            <label for="workAccident">Work Accident (0/1)</label>
+            <input type="number" name="workAccident" required>
+            
+            <label for="promotionInLast5years">Promotion in Last 5 Years (0/1)</label>
+            <input type="number" name="promotionInLast5years" required>
+            
+            <label for="salary">Salary</label>
+            <input type="number" name="salary" required>
+            
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
